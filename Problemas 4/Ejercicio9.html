@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <div id="post-102">
+        <p>I like Confirm modals.</p>
+        <a data-deletepost="post-102">Delete post</a>
+    </div>
+    <div id="post-103">
+        <p>That's way too cool</p>
+        <a data-deletepost="post-103">Delete post</a>
+    </div>
+</body>
+<script>
+    var deleteBtn = document.querySelectorAll("[data-deletepost]");
+    deleteBtn.forEach(boton =>{
+        let div = document.getElementById(boton.getAttribute('data-deletepost'));
+        boton.addEventListener('click',function(){
+            let resp=confirm(`¿ Seguro de eliminar: 
+            " ${div.querySelector('p').innerHTML } " ?`)
+            resp==true ? div.remove() : '';
+        })
+    });
+</script>
+</html>
