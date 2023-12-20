@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+    <style>
+        td {
+            border: 1px solid chocolate;
+        }
+        th {
+            border: 1px solid chocolate;
+        }
+    </style>
+    <script>
+        function tabla(){
+            var personArr =[
+            {
+                "personId": 123,
+                "name": "Jhon",
+                "city": "Melbourne",
+                "phoneNo": "1234567890"
+            },
+            {
+                "personId": 124,
+                "name": "Amelia",
+                "city": "Sydney",
+                "phoneNo": "1234567890"
+            },
+            {
+                "personId": 125,
+                "name": "Emily",
+                "city": "Perth",
+                "phoneNo": "1234567890"
+            },
+            {
+                "personId": 126,
+                "name": "Abraham",
+                "city": "Perth",
+                "phoneNo": "1234567890"
+            }
+        ];
+        var div = document.querySelector('#contenedor');
+    
+        var tabla = document.createElement('table');
+        var tablah = document.createElement('thead');
+        var tablatr = document.createElement('tr');
+        
+        //Inicio de encabezado de tabla
+        var tablath1 = document.createElement('th');
+        tablath1.textContent='ID';
+        tablatr.appendChild(tablath1);
+    
+        var tablath2 = document.createElement('th');
+        tablath2.textContent='Nombre';
+        tablatr.appendChild(tablath2);
+    
+        var tablath3 = document.createElement('th');
+        tablath3.textContent='Ciudad';
+        tablatr.appendChild(tablath3);
+        
+        var tablath4 = document.createElement('th');
+        tablath4.textContent='Teléfono';
+        tablatr.appendChild(tablath4);
+        //Fin de encabezado de tabla
+        tablah.appendChild(tablatr);
+        tabla.appendChild(tablah);
+    
+        //Inicia de tbody
+        var tablab = document.createElement('tbody');
+        personArr.forEach(item => {
+            var tbodytd1 = document.createElement('td');
+            tbodytd1.textContent= item.personId;
+    
+            var tbodytd2 = document.createElement('td');
+            tbodytd2.textContent= item.name;
+    
+            var tbodytd3 = document.createElement('td');
+            tbodytd3.textContent= item.city;
+    
+            var tbodytd4 = document.createElement('td');
+            tbodytd4.textContent= item.phoneNo;
+            
+            var tbodytr = document.createElement('tr');
+            tbodytr.appendChild(tbodytd1);
+            tbodytr.appendChild(tbodytd2);
+            tbodytr.appendChild(tbodytd3);
+            tbodytr.appendChild(tbodytd4);
+            tablab.appendChild(tbodytr);
+        });
+        //Fin de tbody
+        tablah.insertAdjacentElement('afterend',tablab);
+        div.appendChild(tabla);
+        }
+        
+    </script>
+</head>
+<body onload="tabla()">
+    <h1>Tabla</h1>
+    <div id="contenedor">
+    </div>
+</body>
+</html>

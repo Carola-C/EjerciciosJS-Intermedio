@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="C1" data-id="US" data-dial-code="1" onclick="obtenerInfo(this)">USA</li>
+        <li id="C2" data-id="CA" data-dial-code="2" onclick="obtenerInfo(this)">Canada</li>
+        <li id="C3" data-id="FF" data-dial-code="3" onclick="obtenerInfo(this)">France</li>
+    </ul>
+    <script>
+        function obtenerInfo(elemento){
+            alert(`
+                Elemento Seleccionado:
+                "ID elemento: ${elemento.getAttribute('id')}"
+                "ISO ID: ${elemento.dataset.id}"
+                "Dial Code: ${elemento.getAttribute('data-dial-code')}"
+            `);
+            var dato =elemento.getAttribute('data-id');
+            console.log(dato);
+        }
+    </script>
+</body>
+</html>

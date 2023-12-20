@@ -14,10 +14,3 @@ function orden(){
     console.log(miArray);
 }
 orden();
-
-var object = {
-    key1: 10,
-    key2: 3,
-    key3: 40,
-    key4: 20
-}
