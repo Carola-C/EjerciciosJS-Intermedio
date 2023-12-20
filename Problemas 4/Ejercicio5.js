@@ -14,4 +14,5 @@ myClassInstance.name = 'Joe';
 myClassInstance.name = 'Bob';
 //Se muestra solo Bob porque el metodo get name devuelve la posición del tamaño menos 1
 console.log(myClassInstance.name);
+//Aquí se muestra el arreglo porque se esta obteniendo el dato del constructor
 console.log(myClassInstance.names_);
